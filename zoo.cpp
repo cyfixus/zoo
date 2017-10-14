@@ -1,3 +1,8 @@
+/******************************************************************************
+ * Author: Sean Foster                                                <zoo.cpp>
+ * Date: 10/13/2017
+ * Description: Zoo class constructor and functions to conduct daily operations
+******************************************************************************/
 #include "zoo.hpp"
 
 Zoo::Zoo()
@@ -34,11 +39,6 @@ void Zoo::zooIntro()
             << " starting cash.... spend it wisely!\n\n"
             << "You will have the opportunity to purchase up to 2 of "
             << "each animal.\n\nTiger: $10000\tPenguin: $1000\tTurtle: $100\n";
-}
-
-void Zoo::bankStatement()
-{
-  std::cout << "\n\tBank: $" << bank << std::endl; 
 }
 
 void Zoo::zooStatus()
@@ -82,45 +82,6 @@ void Zoo::feedAnimals()
   adjustBalance(-totalFoodCost());
   bankStatement();
   std::cout << "\n--------------------------------------\n"; 
-}
-
-void Zoo::peacefulDay()
-{
-  std::cout <<"\nThankfully you had a peacefulday\n All animals are safe\n";
-}
-
-void Zoo::randomEvent()
-{
-  switch(rand() % 5)
-  {
-    case 0:
-      if(killAnimal())
-      {
-        break;
-      }
-    case 1:
-      attendenceBoom();
-      break;
-    case 2:
-      if(newBaby())
-      {
-        break;
-      }
-    case 3:
-      peacefulDay();
-      break;
-    case 4:
-    default:
-      killSpecies();
-      break;
-  }
-}
-
-void Zoo::attendenceBoom()
-{
-  bonus = true;
-  std::cout << "\n  >  >  Congratulations on record attendance!!  <  <\n"
-            << "\tThe tiger exhibit earned you some extra cash today!\n";
 }
 
 void Zoo::wantQuit()

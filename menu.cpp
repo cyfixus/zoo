@@ -1,12 +1,9 @@
-/**************************************
- * Author: Sean Foster
+/******************************************************************************
+ * Author: Sean Foster                                               <menu.cpp>
  * Date: 10/10/2017
- * Description: Menu function has been adjusted to take in a string
- *              to display the options list, intro, etc.. and an int
- *              to represent the number of options, so that a valid
- *              selection can be returned within the range, rather
- *              than adjusting this file each time.
-**************************************/
+ * Description: Menu function displays input string as options list. 
+ *              optionCount ensures a valid selection can be returned.
+******************************************************************************/
 #include "menu.hpp"
 
 int menu(string menuOptions, int optionCount)

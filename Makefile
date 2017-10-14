@@ -1,18 +1,17 @@
-
-########################################
-# Author: Sean Foster
+###############################################################################
+# Author: Sean Foster         																			<Makefile>
 # Date: 09/21/2017
 # Description: Makefile for Project 02: Zoo Tycoon
-########################################
+###############################################################################
 CXX = g++
 CXXFLAGS = -std=c++0x
 CXXFLAGS += -Wall
 CXXFLAGS += -pedantic-errors
 CXXFLAGS += -g
 
-OBJS = main.o menu.o validator.o animal.o tiger.o turtle.o penguin.o zoo.o moneyManagement.o animalManagement.o
+OBJS = main.o menu.o validator.o animal.o tiger.o turtle.o penguin.o zoo.o moneyManagement.o animalManagement.o events.o babyEvents.o
 
-SRCS = main.cpp menu.cpp validator.cpp animal.cpp tiger.cpp turtle.cpp penguin.cpp zoo.cpp moneyManagement.cpp animalManagement.cpp
+SRCS = main.cpp menu.cpp validator.cpp animal.cpp tiger.cpp turtle.cpp penguin.cpp zoo.cpp moneyManagement.cpp animalManagement.cpp events.cpp babyEvents.cpp
 
 HEADERS = menu.hpp validator.hpp animal.hpp tiger.hpp turtle.hpp penguin.hpp zoo.hpp
 

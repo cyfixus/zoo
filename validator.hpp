@@ -1,11 +1,10 @@
-/**************************************
- * Author: Sean Foster
+/******************************************************************************
+ * Author: Sean Foster                                          <validator.hpp>
  * Date: 10/07/2017
- * Description: Validator prototypes, the function uses string
- *              functions like at(), length() so I included
- *              the using directive here, I also used the isdigit()
- *              function located in cctype
-**************************************/
+ * Description: Validator prototypes, the function uses string functions like
+ *              at(), length() so I included the using directive here, I also 
+ *              used the isdigit() function located in cctype
+******************************************************************************/
 #ifndef VALIDATOR_HPP
 #define VALIDATOR_HPP
 #include <cctype>

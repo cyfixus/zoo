@@ -1,73 +1,9 @@
+/******************************************************************************
+ * Author: Sean Foster                                   <animalManagement.cpp>
+ * Date: 10/13/2017
+ * Description: Zoo class functions for adding and removing zoo animals
+******************************************************************************/
 #include "zoo.hpp"
-
-void Zoo::addBabies(int babyCount, int species)
-{
-  for(int animal = 0; animal < babyCount; animal++)
-  {
-    switch(species)
-    {
-      case 0:
-        addTiger(0, true);
-        break;
-      case 1:
-        addPenguin(0, true);
-        break;
-      case 2:
-        addTurtle(0, true);
-        break;
-    }
-  }
-}
-
-bool Zoo::findParent(Animal *animals, int capacity, int species)
-{
-  for(int animal = 0; animal < capacity; animal++)
-  {
-    int age = animals[animal].toYears(animals[animal].getAge());
-    if(age >= 3)
-    {
-      int babyCount = 0;
-      switch(species)
-      {
-        case 0:
-          babyCount = tigerBabies;
-          break;
-        case 1:
-          babyCount = penguinBabies;
-          break;
-        case 2:
-          babyCount = turtleBabies;
-          break;
-      }
-      addBabies(babyCount, species);
-      return true;
-    }
-  }
-  return false;
-}
-
-bool Zoo::newBaby()
-{
-  switch(rand() % 3)
-  {
-    case 0:
-      if(findParent(tigers, tigerCapacity, 0))
-      {
-        return true;;
-      }
-    case 1:
-      if(findParent(penguins, penguinCapacity, 1))
-      {
-        return true;
-      }
-    case 2:
-      if(findParent(turtles, turtleCapacity, 2))
-      {
-        return true;
-      }
-  }
-  return false;
-}
 
 void Zoo::doubleTigerCage()
 {
@@ -328,49 +264,6 @@ bool Zoo::addTurtle(int age, bool baby)
     }
   }
   return true;
-}
-
-bool Zoo::killAnimal()
-{
-  switch(rand() % 3)
-  {
-    case 0:
-      if(removeTiger())
-      {
-        return true;
-      }
-    case 1:
-      if(removePenguin())
-      {
-        return true;
-      }
-    case 2:
-      if(removeTurtle())
-      {
-        return true;
-      }
-  }
-  return false;
-}
-
-bool Zoo::killSpecies()
-{
-  switch(rand() % 3)
-  {
-    case 0:
-      std::cout << "\n * * A terrible disease has killed all the tigers!\n";
-      emptyCage(tigers, tigerCapacity);
-      return true;
-    case 1:
-      std::cout << "\n * * A terrible disease has killed all the penguins!\n";
-      emptyCage(penguins, penguinCapacity);
-      return true;
-    case 2:
-      std::cout << "\n * * A terrible disease has killed all the turtles!\n";
-      emptyCage(turtles, turtleCapacity);
-      return true;
-  }
-  return false;
 }
 
 void Zoo::removeAnimal(Animal *animals, int animalIndex)

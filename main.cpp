@@ -1,3 +1,8 @@
+/******************************************************************************
+ * Author: Sean Foster                                               <main.cpp>
+ * Date: 10/13/2017
+ * Description: Prompts menu to create a new instance of ZOO TYCOON or quit.
+******************************************************************************/
 #include "menu.hpp"
 #include "zoo.hpp"
 

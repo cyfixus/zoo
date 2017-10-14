@@ -1,8 +1,8 @@
-  /**************************************
- * Author: Sean Foster
+/******************************************************************************
+ * Author: Sean Foster                                             <turtle.hpp>
  * Date: 10/13/2017
- * Description: Turtle class header
-**************************************/
+ * Description: Turtle declaration
+******************************************************************************/
 #ifndef TURTLE_HPP
 #define TURTLE_HPP
 

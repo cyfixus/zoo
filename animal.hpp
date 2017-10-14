@@ -1,8 +1,8 @@
-  /**************************************
- * Author: Sean Foster
+/******************************************************************************
+ * Author: Sean Foster                                             <animal.hpp>
  * Date: 10/13/2017
- * Description: Animal class header
-**************************************/
+ * Description: Animal declaration
+******************************************************************************/
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 

@@ -1,10 +1,8 @@
-/**************************************
- * Author: Sean Foster
+/******************************************************************************
+ * Author: Sean Foster                                          <validator.cpp>
  * Date: 10/10/2017
- * Description: Validator takes in a string and determines whether
- *              the input is what was desired. Curently only a int
- *              validator is present
-**************************************/
+ * Description: Validates input string for int
+******************************************************************************/
 #include "validator.hpp"
 
 /**************************************
@@ -15,7 +13,6 @@
 bool isValidInt(string checkString)
 {
   int i = 0;
-  //I realized the original for loop wouldn't allow a negative number
   if(checkString.at(i)=='-')
   {
     i++;
@@ -37,6 +34,7 @@ bool isValidInt(string checkString)
   *  converting to a string and when I tried crazy long numbers I would get
   *  an out of range error I referred to cplusplus.com to structure the 
   *  catch argument to handle the error.
+  *  returns a valid int, or -1(...effective only if requesting unsigned int).
   ******************************************/
 int getValidInt(string checkString)
 {

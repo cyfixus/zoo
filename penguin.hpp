@@ -1,8 +1,8 @@
-  /**************************************
- * Author: Sean Foster
+/******************************************************************************
+ * Author: Sean Foster                                            <penguin.hpp>
  * Date: 10/13/2017
- * Description: Penguin class header
-**************************************/
+ * Description: Penguin declaration
+******************************************************************************/
 #ifndef PENGUIN_HPP
 #define PENGUIN_HPP
 

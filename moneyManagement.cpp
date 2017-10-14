@@ -1,4 +1,15 @@
+/******************************************************************************
+ * Author: Sean Foster                                    <moneyManagement.cpp>
+ * Date: 10/13/2017
+ * Description: Zoo class functions to manage and report funds
+******************************************************************************/
 #include "zoo.hpp"
+
+
+void Zoo::bankStatement()
+{
+  std::cout << "\n\tBank: $" << bank << std::endl; 
+}
 
 void Zoo::calcProfits()
 {

@@ -1,3 +1,8 @@
+/******************************************************************************
+ * Author: Sean Foster                                            <penguin.cpp>
+ * Date: 10/13/2017
+ * Description: Penguin definition
+******************************************************************************/
 #include "penguin.hpp"
 
 Penguin::Penguin()
