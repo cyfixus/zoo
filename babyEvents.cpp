@@ -1,6 +1,6 @@
 /******************************************************************************
  * Author: Sean Foster                                         <babyEvents.cpp>
- * Date: 10/13/2017
+ * Date: 10/20/2017
  * Description: Zoo class baby-related events
 ******************************************************************************/
 #include "zoo.hpp"
@@ -65,23 +65,35 @@ bool Zoo::findParent(Animal *animals, int capacity, int species)
  * newBaby randomly chooses one of the species to call findParent and 
  * subsequently new baby on.
 ******************************************************************************/
-bool Zoo::newBaby()
+bool Zoo::newBaby(bool dblBirth)
 {
   switch(rand() % 3)
   {
     case 0:
       if(findParent(tigers, tigerCapacity, 0))
       {
-        return true;;
+        if(dblBirth)
+        {
+          findParent(tigers, tigerCapacity, 0);
+        }
+        return true;
       }
     case 1:
       if(findParent(penguins, penguinCapacity, 1))
       {
+        if(dblBirth)
+        {
+          findParent(penguins, penguinCapacity, 0);
+        }
         return true;
       }
     case 2:
       if(findParent(turtles, turtleCapacity, 2))
       {
+        if(dblBirth)
+        {
+          findParent(turtles, turtleCapacity, 0);
+        }
         return true;
       }
   }

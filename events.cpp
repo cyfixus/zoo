@@ -1,6 +1,6 @@
 /******************************************************************************
  * Author: Sean Foster                                             <events.cpp>
- * Date: 10/13/2017
+ * Date: 10/20/2017
  * Description: Zoo class random events
 ******************************************************************************/
 #include "zoo.hpp"
@@ -14,28 +14,49 @@ void Zoo::randomEvent()
   const int eventChoice = rand() % 100;
   if(eventChoice >= 0 && eventChoice <= 28)
   {
+    //tiger bonus
     attendenceBoom();
   }
   else if(eventChoice >= 29 && eventChoice <= 51)
   {
-    if(!newBaby())
+    //trys to find an animal to give birth
+    if(!newBaby(false))
     {
       randomEvent();
     }
   }
   else if(eventChoice >= 52 && eventChoice <= 74)
-  {
+  { 
+    //kills one random animal
     if(!killAnimal())
     {
       randomEvent();
     }
   }
   else if(eventChoice >= 75 && eventChoice <= 81)
-  {
+  { //wipe out a species, if you get too many tigers you'll never lose
     killSpecies();
+  }
+  else if(eventChoice >=82 && eventChoice <= 88)
+  { //big money bonus
+    zooBoom();
+  }
+  else if(eventChoice >= 89 && eventChoice <= 95)
+  {
+    //double birth
+    if(!newBaby(true))
+    {
+      randomEvent();
+    }
+  }
+  else if(eventChoice == 99)
+  {
+    std::cout <<"\n\n** YOUR ENTIRE ZOO HAS BEEN WIPED OUT BY DISEASE **\n\n";
+    clearZoo();
   }
   else
   {
+    //peaceful day message
     peacefulDay();
   }
   //I decided to introduce a pause after the random event
@@ -67,6 +88,12 @@ void Zoo::attendenceBoom()
             << "\tThe tiger exhibit earned you some extra cash today!\n";
 }
 
+void Zoo::zooBoom()
+{
+  dblBoom = true;
+  std::cout << "\n  >  >  Congratulations on record attendance!!  <  <\n"
+            << "\tYour exhibits earned you some extra cash today!\n";
+}
 
 /******************************************************************************
  * killAnimal chooses a random animal to kill aka call remove on

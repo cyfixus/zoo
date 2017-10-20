@@ -1,6 +1,6 @@
 /******************************************************************************
  * Author: Sean Foster                                                <zoo.cpp>
- * Date: 10/13/2017
+ * Date: 10/20/2017
  * Description: Zoo class constructor and functions to conduct daily operations
 ******************************************************************************/
 #include "zoo.hpp"
@@ -8,7 +8,7 @@
 Zoo::Zoo()
 {
   this->day = 0;
-  this->bank = 22330.0;
+  this->bank = 23300.0;
   this->tigerCapacity = 10;
   this->turtleCapacity = 10;
   this->penguinCapacity = 10;
@@ -19,6 +19,7 @@ Zoo::Zoo()
   this->penguins = new Penguin[penguinCapacity];
   this->turtles = new Turtle[turtleCapacity];
   this->bonus = false;
+  this->dblBoom = false;
   this->keepPlaying = true;
   clearZoo();
   zooIntro();

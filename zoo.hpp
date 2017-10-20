@@ -1,6 +1,6 @@
 /******************************************************************************
  * Author: Sean Foster                                                <zoo.hpp>
- * Date: 10/13/2017
+ * Date: 10/20/2017
  * Description: Zoo class header, cpp file is separated into 5, zoo.cpp
  *              animalManagement.cpp, moneyManagement.cpp, events.cpp, and
  *              babyEvents.cpp. zoo deals with introducing and intializing the 
@@ -37,6 +37,7 @@ class Zoo
     int turtleCount;
     int penguinCount;
     bool bonus;
+    bool dblBoom;
     bool keepPlaying;
     Tiger *tigers;
     Turtle *turtles;
@@ -50,15 +51,12 @@ class Zoo
     void purchaseDay();
     void newDay();
     void game();
-    void randomEvent();
-    void attendenceBoom();
-    void peacefulDay();
     void wantQuit();
     
     //animalManagement.cpp
     void addBabies(int, int);
     bool findParent(Animal*, int, int);
-    bool newBaby();
+    bool newBaby(bool);
     void purchaseAnimals(int);
     void purchaseAnimal(int, int);
     void ageAnimalsOneDay(Animal*, int);
@@ -68,18 +66,19 @@ class Zoo
     bool addTiger(int, bool);
     bool addPenguin(int, bool);
     bool addTurtle(int, bool);
-    bool killAnimal();
-    bool killSpecies();
     void removeAnimal(Animal*, int);
     bool removeTiger();
     bool removePenguin();
     bool removeTurtle();
+    bool killAnimal();
+    bool killSpecies();
     void clearZoo();
     void updateCounts();
     void updateTigerCount();
     void updatePenguinCount();
     void updateTurtleCount();
     void emptyCage(Animal*, int);
+    void doubleCage(Animal*, int);
     void doubleTigerCage();
     void doublePenguinCage();
     void doubleTurtleCage();
@@ -97,6 +96,12 @@ class Zoo
     double penguinFoodCost();
     double turtleFoodCost();
     double tigerBonus();
+    
+    //random events
+    void randomEvent();
+    void attendenceBoom();
+    void peacefulDay();
+    void zooBoom();
 
 };
 

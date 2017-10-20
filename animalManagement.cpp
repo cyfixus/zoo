@@ -1,6 +1,6 @@
 /******************************************************************************
  * Author: Sean Foster                                   <animalManagement.cpp>
- * Date: 10/13/2017
+ * Date: 10/20/2017
  * Description: Zoo class functions for adding and removing zoo animals
 ******************************************************************************/
 #include "zoo.hpp"
@@ -218,6 +218,7 @@ bool Zoo::addTiger(int age, bool baby)
     if(tigerCount >= tigerCapacity)
     {
       std::cout << "\nUpgrading Tiger Cage\n";
+      // doubleCage(tigers, 0);
       doubleTigerCage();
       addTiger(age, baby);
     }
@@ -271,6 +272,7 @@ bool Zoo::addPenguin(int age, bool baby)
     if(penguinCount >= penguinCapacity)
     {
       std::cout << "\nUpgrading Penguin Cage\n";
+      // doubleCage(penguins, 1);
       doublePenguinCage();
       addPenguin(age, baby);
     }
@@ -324,6 +326,7 @@ bool Zoo::addTurtle(int age, bool baby)
     if(turtleCount >= turtleCapacity)
     {
       std::cout << "\nUpgrading Turtle Cage\n";
+      // doubleCage(turtles, 2);
       doubleTurtleCage();
       addTurtle(age, baby);
     }
@@ -493,3 +496,44 @@ void Zoo::updateTurtleCount()
     }
   }
 }
+
+
+/******************************************************************************
+ * doubleCage was supposed to be the one function to double any cage... but I
+ * can't figure out why it doesn't work all the time. I'm going to leave it
+ * incase i decide to try on it again
+******************************************************************************/
+// void Zoo::doubleCage(Animal *animals, int species)
+// {
+//   int newSize = 0;
+//   int capacity = 0;
+//   Animal *newCage;
+//   switch(species)
+//   {
+//     case 0:
+//       newSize = tigerCapacity*2;
+//       capacity = tigerCapacity;
+//       tigerCapacity = newSize;
+//       newCage = new Tiger[newSize];
+//       break;
+//     case 1:
+//       newSize = penguinCapacity*2;
+//       capacity = penguinCapacity;
+//       penguinCapacity = newSize;
+//       newCage = new Penguin[newSize];
+//       break;
+//     case 2:
+//       newSize = turtleCapacity*2;
+//       capacity = turtleCapacity;
+//       turtleCapacity = newSize;
+//       newCage = new Turtle[newSize];
+//       break;
+//   }
+//   emptyCage(newCage, newSize);
+//   for(int i = 0; i < capacity; i++)
+//   {
+//     newCage[i] = animals[i];
+//   }
+//   delete [] animals;
+//   animals = newCage;
+// }

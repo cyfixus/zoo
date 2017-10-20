@@ -1,6 +1,6 @@
 /******************************************************************************
  * Author: Sean Foster                                    <moneyManagement.cpp>
- * Date: 10/13/2017
+ * Date: 10/20/2017
  * Description: Zoo class functions to manage and report funds
 ******************************************************************************/
 #include "zoo.hpp"
@@ -39,6 +39,13 @@ void Zoo::calcProfits()
     profit += tigerBonus();
     std::cout <<"\n\nTiger Bonus: $" << tigerBonus();
     bonus = false;
+  }
+  if(dblBoom)
+  {
+    double bigBonus = tigerBonus()+penguinPayoff()+turtlePayoff();
+    profit += bigBonus;
+    std::cout <<"\n\nZoo Boom Bonus: $" << bigBonus;
+    dblBoom = false;
   }
   std::cout << "\n\nTotal Profit: $" <<  profit;
   adjustBalance(profit);
