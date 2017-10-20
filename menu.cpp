@@ -10,7 +10,7 @@ int menu(string menuOptions, int optionCount)
 {
   string choice = "";
   int selection = 0;
-  std::cout << menuOptions;
+  std::cout << menuOptions; 
   std::cin >> choice;
   if(isValidInt(choice))
   {
@@ -21,6 +21,12 @@ int menu(string menuOptions, int optionCount)
     }
     else
     {
+      //I kept running into issues if I pressed 0 enter, enter, then a valid
+      //choice, this ignore seems to have fixed it
+      if(std::cin)
+      {
+        std::cin.ignore();
+      }    
       menu(menuOptions, optionCount);
     }
   }

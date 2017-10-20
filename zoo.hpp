@@ -1,7 +1,17 @@
 /******************************************************************************
  * Author: Sean Foster                                                <zoo.hpp>
  * Date: 10/13/2017
- * Description: Zoo class header
+ * Description: Zoo class header, cpp file is separated into 5, zoo.cpp
+ *              animalManagement.cpp, moneyManagement.cpp, events.cpp, and
+ *              babyEvents.cpp. zoo deals with introducing and intializing the 
+ *              zoo and calling the daily functions. animalManagement deals
+ *              with allocating and deallocating the Animal arrays and managing
+ *              their counts and relevant data. moneyManagement deals with the
+ *              food costs, animal purchase costs, bonuses, and profits/payoff.
+ *              events includes the random event generator and cooresponding 
+ *              functions. babyEvents involves the functions that find of age
+ *              animals to have babies and sends those babies to be added into
+ *              the appropriate array
 ******************************************************************************/
 #ifndef ZOO_HPP
 #define ZOO_HPP

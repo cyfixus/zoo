@@ -1,7 +1,7 @@
 /******************************************************************************
  * Author: Sean Foster                                             <animal.hpp>
  * Date: 10/13/2017
- * Description: Animal declaration
+ * Description: Animal declaration, constants defined
 ******************************************************************************/
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP

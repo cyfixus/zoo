@@ -5,39 +5,61 @@
 ******************************************************************************/
 #include "zoo.hpp"
 
+/******************************************************************************
+ * randomEvent calls rand() to get a random number from 0 to 100, that int is
+ * then checked within weighted ranges of possible random events
+******************************************************************************/
 void Zoo::randomEvent()
 {
-  switch(rand() % 5)
+  const int eventChoice = rand() % 100;
+  if(eventChoice >= 0 && eventChoice <= 28)
   {
-    case 0:
-      if(killAnimal())
-      {
-        break;
-      }
-    case 1:
-      attendenceBoom();
-      break;
-    case 2:
-      if(newBaby())
-      {
-        break;
-      }
-    case 3:
-      peacefulDay();
-      break;
-    case 4:
-    default:
-      killSpecies();
-      break;
+    attendenceBoom();
   }
+  else if(eventChoice >= 29 && eventChoice <= 51)
+  {
+    if(!newBaby())
+    {
+      randomEvent();
+    }
+  }
+  else if(eventChoice >= 52 && eventChoice <= 74)
+  {
+    if(!killAnimal())
+    {
+      randomEvent();
+    }
+  }
+  else if(eventChoice >= 75 && eventChoice <= 81)
+  {
+    killSpecies();
+  }
+  else
+  {
+    peacefulDay();
+  }
+  //I decided to introduce a pause after the random event
+  std::cout << "\n\nPress enter to continue...\n";
+  if(std::cin)
+  {
+    std::cin.ignore();
+  }
+  std::cin.get();
 }
 
+/******************************************************************************
+ * peacefulDay prints a message that all was quiet that day
+******************************************************************************/
 void Zoo::peacefulDay()
 {
   std::cout <<"\nThankfully you had a peacefulday\n All animals are safe\n";
 }
 
 
+/******************************************************************************
+ * attendenceBoom sets the bonus boolean to true, so the tiger bonus can be
+ * added to the daily total
+******************************************************************************/
 void Zoo::attendenceBoom()
 {
   bonus = true;
@@ -45,6 +67,10 @@ void Zoo::attendenceBoom()
             << "\tThe tiger exhibit earned you some extra cash today!\n";
 }
 
+
+/******************************************************************************
+ * killAnimal chooses a random animal to kill aka call remove on
+******************************************************************************/
 bool Zoo::killAnimal()
 {
   switch(rand() % 3)
@@ -68,6 +94,10 @@ bool Zoo::killAnimal()
   return false;
 }
 
+/******************************************************************************
+ * killSpecies takes out an entire species, I added this after realizing that
+ * if you don't lose any tigers, or lose tigers too slowly, you'll never lose
+******************************************************************************/
 bool Zoo::killSpecies()
 {
   switch(rand() % 3)

@@ -1,10 +1,14 @@
 /******************************************************************************
  * Author: Sean Foster                                         <babyEvents.cpp>
  * Date: 10/13/2017
- * Description: Zoo class random events
+ * Description: Zoo class baby-related events
 ******************************************************************************/
 #include "zoo.hpp"
 
+/******************************************************************************
+ * addBabies takes in the number of babies to add and an int to represent which
+ * specices of animal to add to and alls the class specific add the babies
+******************************************************************************/
 void Zoo::addBabies(int babyCount, int species)
 {
   for(int animal = 0; animal < babyCount; animal++)
@@ -24,6 +28,12 @@ void Zoo::addBabies(int babyCount, int species)
   }
 }
 
+
+/******************************************************************************
+ * findParent loops through whichever Animal array is passed to the function
+ * determining whether or not there is an animal of age (3) to give birth.
+ * if a suitableParent is found, the addBabies is alled on that species
+******************************************************************************/
 bool Zoo::findParent(Animal *animals, int capacity, int species)
 {
   for(int animal = 0; animal < capacity; animal++)
@@ -51,6 +61,10 @@ bool Zoo::findParent(Animal *animals, int capacity, int species)
   return false;
 }
 
+/******************************************************************************
+ * newBaby randomly chooses one of the species to call findParent and 
+ * subsequently new baby on.
+******************************************************************************/
 bool Zoo::newBaby()
 {
   switch(rand() % 3)
